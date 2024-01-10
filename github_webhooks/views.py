@@ -12,7 +12,11 @@ from github_webhooks.models import Event
 def handler(request):
     payload = json.loads(request.body)
     event = Event.objects.create(
-        event=request.headers["x-github-event"],
+        id=request.headers["X-Github-Delivery"],
+        event=request.headers["X-Github-Event"],
+        hook_id=request.headers["X-Github-Hook-Id"],
+        installation_id=request.headers["X-Github-Hook-Installation-Target-Id"],
+        installation_type=request.headers["X-Github-Hook-Installation-Target-Type"],
         payload=payload,
     )
     return JsonResponse({"event": event.pk})
