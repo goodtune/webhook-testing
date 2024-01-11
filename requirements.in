@@ -1,1 +1,3 @@
+django-filter
+djangorestframework
 django~=5.0

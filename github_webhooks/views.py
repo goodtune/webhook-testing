@@ -3,8 +3,9 @@ import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
+from rest_framework import permissions, viewsets
 
-from github_webhooks.models import Event
+from github_webhooks.models import Event, EventListSerializer, EventSerializer
 
 
 @csrf_exempt
@@ -20,3 +21,15 @@ def handler(request):
         payload=payload,
     )
     return JsonResponse({"event": event.pk})
+
+
+class EventViewSet(viewsets.ModelViewSet):
+    queryset = Event.objects.order_by("-received")
+    serializer_class = EventSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    filterset_fields = ("event", "hook_id", "installation_id")
+
+    def get_serializer_class(self):
+        if "pk" not in self.kwargs:
+            return EventListSerializer
+        return EventSerializer
