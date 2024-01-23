@@ -36,3 +36,7 @@ Forwarding         https://f412-120-17-214-230.ngrok-free.app -> http://localhos
 Connections        ttl     opn     rt1     rt5     p50     p90
                    1       0       0.00    0.00    90.26   90.26
 ```
+
+## Rust
+
+I want to experiment with Rust language on AWS Lambda - I asked ChatGPT about it and I got [this response](https://chat.openai.com/share/8b6cdffe-f9f3-4db6-bd39-9787af66328f).
