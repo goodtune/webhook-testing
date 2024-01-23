@@ -1,0 +1,15 @@
+{
+	"name": "Rust",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"VARIANT": "1"
+		}
+	},
+	"extensions": [
+		"vsc-remote.remote-containers"
+	],
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash"
+	}
+}
