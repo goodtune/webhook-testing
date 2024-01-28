@@ -1,0 +1,7 @@
+consumers = [
+    "subscriber-1",
+    "subscriber-2",
+    "replay",
+]
+
+secret    = "my-secret"
