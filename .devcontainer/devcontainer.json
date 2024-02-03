@@ -9,6 +9,12 @@
 	"extensions": [
 		"vsc-remote.remote-containers"
 	],
+	"features": {
+		"ghcr.io/devcontainers/features/aws-cli:1": {},
+		"ghcr.io/devcontainers/features/github-cli": {},
+		"ghcr.io/devcontainers/features/python:1": {},
+		"ghcr.io/devcontainers/features/docker-outside-of-docker": {},
+	},
 	"settings": {
 		"terminal.integrated.shell.linux": "/bin/bash"
 	}
